@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   terraform:
-    name: Terraform Validate and Plan
+    name: Terraform Validate
     runs-on: ubuntu-latest
 
     env:
