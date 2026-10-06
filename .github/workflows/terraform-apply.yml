@@ -1,7 +1,7 @@
-name: Terraform Validation
+name: Terraform Apply
 
 on:
-  pull_request:
+  push:
     branches:
       - dev
 
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   terraform:
-    name: Terraform Validate
+    name: Terraform Apply
     runs-on: ubuntu-latest
 
     env:
@@ -28,15 +28,8 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v4
 
-      - name: Terraform Format Check
-        run: terraform fmt -check -recursive
-
       - name: Terraform Init
         run: terraform init -input=false
 
-      - name: Terraform Validate
-        run: terraform validate
-
-      - name: Terraform Plan
-        run: terraform plan -input=false
-
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -input=false
