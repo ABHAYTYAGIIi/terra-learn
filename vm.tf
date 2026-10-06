@@ -2,7 +2,7 @@ resource "azurerm_linux_virtual_machine" "vm1" {
   name                = "terra-learn-vm1"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
-  size                = "Standard_B2s"
+  size                = "Standard_B2ps_v2"
 
   admin_username = "azureuser"
 
@@ -53,7 +53,7 @@ resource "azurerm_linux_virtual_machine" "vm2" {
   name                = "terra-learn-vm2"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
-  size                = "Standard_B2s"
+  size                = "Standard_B2ps_v2"
 
   admin_username = "azureuser"
 
