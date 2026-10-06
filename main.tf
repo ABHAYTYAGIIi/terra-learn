@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "main" {
-  name     = "terra-learn"
-  location = "East Asia"
+  name     = var.resource_group_name
+  location = var.location
 }
